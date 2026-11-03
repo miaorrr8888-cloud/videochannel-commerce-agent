@@ -1,0 +1,23 @@
+{
+  "_schema": "视频号账号身份锁 v1.0",
+  "_rule": "只存身份字段，不存广告门禁状态。账号未开通带货时用 account_mode=pre_launch 跳过校验。",
+
+  "nickname": "",
+  "avatar": "assets/identity/avatar.png",
+  "bio": "",
+  "subject_type": "individual",
+  "_subject_type_options": {
+    "individual": "个人主体",
+    "enterprise": "企业主体",
+    "official_flagship": "品牌官方旗舰店",
+    "official": "平台官方"
+  },
+  "shop_name": "",
+  "shop_subject": "",
+
+  "_forbidden_in_nickname_or_bio": [
+    "官方、旗舰、专卖、总店、直营（非对应主体时）",
+    "微信官方、腾讯官方、视频号官方",
+    "加微信、私聊、扫码（站外导流）"
+  ]
+}
