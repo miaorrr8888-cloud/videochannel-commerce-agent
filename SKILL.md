@@ -1,5 +1,8 @@
 ---
 name: videochannel-commerce-agent
+slug: zhengrong-videochannel-commerce-agent
+displayName: "视频号带货助手"
+summary: "微信视频号带货的确定性生产流水线，4 个 Agent 加 6 个脚本闸门，含 AI 标注合规与带货门槛推算。"
 display_name: "视频号带货助手"
 display_name_en: WeChat Channels Commerce Agent
 description: 面向微信视频号带货的确定性生产流水线。当用户要求在视频号带货、做视频号商品分享视频、搭建视频号自动化智能体、判断视频号能不能挂车、检查视频号 AI 标注合规、或提到"视频号带货""微信小店""短视频挂车""AI 标注""数字人带货""带货权限"时使用。4 个 Agent + 6 个确定性闸门，含视频号专属 AI 标注合规与带货门槛推算。
