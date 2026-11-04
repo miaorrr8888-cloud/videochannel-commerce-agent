@@ -1,0 +1,43 @@
+{
+  "_schema": "视频号带货 · 唯一事实源 v1.0",
+  "_rule": "所有对外文案只能引用本文件 VERIFIED / USER_STATED 的字段；BLOCKED 字段禁止出现在任何对外物料中。",
+  "_verification_status_legend": {
+    "VERIFIED": "有官方文件/实物/证书佐证",
+    "USER_STATED": "老板口述，无文件但可信",
+    "INFERRED": "推断值，不得对外使用",
+    "BLOCKED": "缺失或不可确认，禁止猜测、禁止对外"
+  },
+
+  "sku_id": "VC-Q2-001",
+  "product_name": "",
+
+  "account_mode": "pre_launch",
+  "video_channel_binding_status": "unbound",
+  "effective_followers": null,
+  "published_video_count": null,
+
+  "product_listing_status": "offline_not_listed",
+  "source_file": "",
+
+  "ai_generated_content": null,
+  "ai_content_types": [],
+  "ai_content_matches_product": null,
+
+  "facts": {
+    "示例字段_请替换": {
+      "value": "",
+      "verification_status": "BLOCKED",
+      "source": "",
+      "note": "缺证据就只能标 BLOCKED，禁止任何 Agent 自行补数"
+    }
+  },
+
+  "product_page_fields": {
+    "价格": {"value": "", "verification_status": "BLOCKED"},
+    "库存": {"value": "", "verification_status": "BLOCKED"},
+    "规格": {"value": "", "verification_status": "BLOCKED"},
+    "发货时效": {"value": "", "verification_status": "BLOCKED"},
+    "售后政策": {"value": "", "verification_status": "BLOCKED"},
+    "资质文件": {"value": "", "verification_status": "BLOCKED"}
+  }
+}

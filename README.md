@@ -158,6 +158,29 @@ channel-agent/
 
 ---
 
+## 输入与输出
+
+**输入**（三样，缺一样都跑不动）
+
+| 输入 | 形式 | 说明 |
+|---|---|---|
+| 商品事实 | `runs/<SKU>/PRODUCT_FACTS.json` | 从 `templates/PRODUCT_FACTS.template.json` 复制后**逐字段回填真实信息** |
+| 拿不到的字段 | `01_research/BLOCKED_FIELDS.json` | 明确列出哪些字段没核实到，不许留空也不许编 |
+| AI 标注声明 | 事实里的 `ai_generated_content` | `true` / `false` 必须显式写，视频号要求明示 |
+
+**输出**
+
+| 输出 | 位置 | 说明 |
+|---|---|---|
+| 闸门判定 | `_gate/channel_gates.json` | 6 个闸门逐项 PASS/FAIL，含耗时与失败原因 |
+| 状态机快照 | `runs/<SKU>/state.json` | 当前阶段、冠军素材、发布记录 |
+| 进程退出码 | stdout | 全部 PASS 返回 0，任一 FAIL 返回非 0，可直接接 CI |
+
+拿模板直接跑会连 GATE-0 都过不了——真实结果见 [`examples/02_示例输出.md`](examples/02_示例输出.md)。
+
+**已知限制**：闸门判定基于规则快照，平台规则变化后需同步更新 `references/`；
+不含任何自动发布能力，提交与挂车必须人工操作；违禁词库不是穷举，不能替代平台审核。
+
 ## 适用用户
 
 **适合：** 准备在微信视频号挂车带货、又不想因为资格或标注问题被限流的人；
