@@ -1,5 +1,23 @@
 # 更新记录
 
+## 2026-11-03 · v1.0.3
+
+### 修复
+
+- README 里 `ad-redline-guardian/scripts/check_banned.py` 是跨技能引用，容易被误读成本包文件，已注明。
+- 删除空的 `examples/` 目录：git 不跟踪空目录，留在包里只会让人以为有示例。
+
+### 文档
+
+- 新增「安装」（纯标准库、零依赖）、「适用用户」（适合/不适合）、「许可证」三节。
+
+### 实测
+
+- 按 README 五步跑通：`state.py init` → 复制事实源模板 → `planner.py` → `channel_gates.py --gate all` → `state.py render`。
+- 闸门在数据未填时判 FAIL（GATE-1 缺 BLOCKED_FIELDS、GATE-2 违禁词命中、GATE-3 缺 ai_generated_content 字段），
+  这是 fail-closed 的预期行为，不是 bug；`result_panel.html` 正常生成。
+- 测试：19 项通过。
+
 ## 2026-11-03 · v1.0.2 规则复核与判定纠错
 
 本版**修改了判定逻辑**，因为对照官方现行规则发现有实质性错误。改动逐条附依据。

@@ -7,7 +7,7 @@ description_zh: 4 个 Agent 只做理解与创意，6 个脚本闸门做全部�
 category: operations
 author: WorkBuddy
 agent_created: true
-version: "1.0.2"
+version: 1.0.3
 updated: "2026-11-03"
 license: MIT
 ---

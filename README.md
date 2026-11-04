@@ -20,6 +20,17 @@
 
 ---
 
+## 安装
+
+```sh
+# 纯标准库，无需 pip 安装任何依赖
+python scripts/state.py --help          # 或直接跑闸门脚本
+python scripts/channel_gates.py --help
+```
+
+作为技能使用时，把整个目录放进 `%USERPROFILE%\.workbuddy\skills\`。
+`templates/` 是给 Agent 用的产出模板，不要删。
+
 ## 二、快速开始
 
 ```bash
@@ -138,7 +149,7 @@ channel-agent/
 | 复用了什么 | 来源 | 用途 |
 |---|---|---|
 | 违禁词库基础层 | `~/.workbuddy/skills/ad-redline-guardian/references/banned-words.md` | 广告法 6 大类 |
-| 违禁词引擎思路 | `ad-redline-guardian/scripts/check_banned.py` | 21 行 md 解析器（本项目内联重写为支持多层词库） |
+| 违禁词引擎思路 | 另一个技能 `ad-redline-guardian/scripts/check_banned.py`（跨仓库引用，不是本包内文件） | 21 行 md 解析器（本项目内联重写为支持多层词库） |
 | 4-Agent 架构 / 铁律 | `~/.workbuddy/skills/ecommerce-agent-orchestrator` | 编排范式 |
 | 视频结构 / 分镜方法 | `~/.workbuddy/skills/video-script-dissect` | CREATIVE 用 |
 | 文案 / 运营 | `ad-copywriter` + `ecommerce-operations` | COMMERCE-COPY 用 |
@@ -146,6 +157,14 @@ channel-agent/
 **本项目的增量**：视频号平台规则、AI 标注合规闸门、带货权限门槛推算、未上架状态处理。
 
 ---
+
+## 适用用户
+
+**适合：** 准备在微信视频号挂车带货、又不想因为资格或标注问题被限流的人；
+代运营公司给客户做「能不能挂车」的合规体检。
+
+**不适合：** 想靠工具绕过平台审核的人——本技能只做判定与提示，不提供规避手段；
+也不适合期待「保证过审」的人，平台判定阈值不公开，本技能给的是 fail-closed 判断。
 
 ## 八、当前状态与下一步
 
@@ -172,6 +191,11 @@ channel-agent/
 视频号讲的是「具体平台的资格与合规红线」。拆开写，两个场景都能独立安装、
 独立演进；合在一起会让只想用通用闸门的人被迫读一堆平台细节。
 两者共用同一套判定哲学的代码结构，接口一致，不冲突。
+
+## 许可证
+
+MIT，全文见 [LICENSE](LICENSE)。可商用、可修改、可再分发，保留版权与许可声明即可。
+**不提供任何形式的担保**：判定结果按平台规则快照给出，平台规则随时可能变，最终以微信官方页面为准。
 
 ## 运行环境
 
